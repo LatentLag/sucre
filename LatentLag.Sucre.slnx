@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="LatentLag.Sucre.Webby.Test/LatentLag.Sucre.Webby.Test.csproj" />
   <Project Path="LatentLag.Sucre.Webby/LatentLag.Sucre.Webby.csproj" />
 </Solution>
