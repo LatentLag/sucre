@@ -43,4 +43,24 @@ public class BasicTests
             response.Content.Headers.ContentType?.ToString());
         Assert.AreEqual("I'm a teapot", response.Content.ReadAsStringAsync().Result);
     }
+
+    [TestMethod]
+    [DataRow("/fibonacci/0", "0")]
+    [DataRow("/fibonacci/2", "1")]
+    public async Task TestFibonacci(string url, string expected)
+    {
+        // Arrange
+        var client = _factory.CreateClient();
+
+
+        // Act
+        var response = await client.PostAsync(url, null);
+        
+
+        // Assert
+        Assert.AreEqual((HttpStatusCode)200, response.StatusCode);
+        Assert.AreEqual("text/plain; charset=utf-8",
+            response.Content.Headers.ContentType?.ToString());
+        Assert.AreEqual(expected, response.Content.ReadAsStringAsync().Result);
+    }
 }
