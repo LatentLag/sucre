@@ -1,0 +1,15 @@
+**/appsettings.Development.json
+**/bin
+**/Dockerfile
+**/obj
+
+**/*.hcl
+**/*.md
+**/*.tf*
+
+.git/
+.github/
+.gitignore
+.dockerignore
+.terraform/
+.vscode/
